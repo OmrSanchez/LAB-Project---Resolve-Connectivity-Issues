@@ -16,17 +16,19 @@ At this point, I had the option of configuring static routes on Router 4 and Rou
 TROUBLESHOOTING STEPS:
 “Ubuntu_Server”
 Step 1.	Login to “Ubuntu_Server” and ping Default Gateway of 10.10.90.254. Success!
-Step 2.	Use the >traceroute command to the 10.10.20.0/24 network and determine where the 
-              route has an issue. Specific command used: traceroute 10.10.20.1
-      i.	Results: 
-      1.	Response from 10.10.90.254
-      2.	Response from 10.10.80.254
-      3.	Response from 10.10.80.1
-      4.	2 more no response followed by a response from 10.10.80.254.
-      5.	At this point the command goes into what appears to be a loop.
+Step 2.	Use the >traceroute command to the 10.10.20.0/24 network and determine where the route has an issue. Specific command used: traceroute 10.10.20.1
+      i. Results: 
+	      1.	Response from 10.10.90.254
+	      2.	Response from 10.10.80.254
+	      3.	Response from 10.10.80.1
+	      4.	2 more no response followed by a response from 10.10.80.254.
+	      5.	At this point the command goes into what appears to be a loop.
 Step 3.	The results indicate an issue with the routes between Routers 4 and 5. Specifically, 
               Router 4 may be missing a route to the 10.10.70.0/24 network or with its default route.
-  	 
+
+
+  	 ![Picture1](https://github.com/user-attachments/assets/4b822b38-d1ea-49ad-a9f5-d9bbf373cbab)
+
 “Routers”
 Step 4.	Login to Router 4. We need to inspect the current routing configuration and determine 
               what may be missing or misconfigured. To see all the current running configuration on 
